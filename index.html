@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/9ef84f8038.js" crossorigin="anonymous"></script>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap');
+
+        *,
+     *::after,
+     *::before {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+     }
+
+     img {
+      display: block;
+      max-width: 100%;
+     }
+     
+
+
+        :root {
+      /* text */
+      --Purple-300: hsl(276, 100%, 81%);
+      --Purple-600: hsl(276, 55%, 52%);
+      --Gray-500: hsl(270, 7%, 64%);
+      --Gray-300: hsl(206, 6%, 79%);
+      --Purple-950: hsl(271, 36%, 24%);
+
+      /* gradients */
+      --Pink-500: hsl(293, 100%, 63%);
+      --Purple-500: hsl(264, 100%, 61%);
+
+      /* secondary */
+      --White: hsl(0, 100%, 100%);
+      --Gray-100: hsl(270, 20%, 96%);
+      --Purple-950: hsl(271, 36%, 24%);
+      --Pink-400 : hsl(289, 100%, 72%); 
+    }
+
+
+
+        body {
+            min-height: 100vh;
+            max-width: 100%;
+            font-family: "Rubik", sans-serif;
+            background-color: var(--Gray-100);
+        }
+
+        .left_side_design {
+            position: relative;
+            max-width: 30rem;
+            height:80vh;
+            left: -100px;
+            background-image: linear-gradient(var(--Pink-500), var(--Purple-500));
+            clip-path: inset(0px round 0 0 100% 100% );
+            z-index: -1;
+        }
+
+
+        .app-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-height: 60vh;
+            width: 80%;
+          
+       
+      }
+
+      .chat-app {
+        position: relative;
+        width: 70%;
+        height: 84vh;
+        margin-left: 2rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+        gap: 4rem;
+      }
+
+      .message {
+        width: 16rem;
+        min-height: 75vh;
+        background-color: var(--Gray-100) ;
+        border-radius: 30px;
+        box-shadow: 0 0 0 8px var(--White);
+        margin-top: 2rem;
+      }
+
+      .message > .sub-heading {
+        padding: .4rem;
+        background-image: linear-gradient(var(--Pink-500), var(--Purple-500));  
+        border-radius: 20px 20px 15px 15px;
+      }
+
+   
+     .sub-heading > .base {
+          position: relative;
+          bottom: 15px;
+          left: 50px;
+          padding: .9rem .2rem;
+          width: 65%;
+          background-color: var(--White);
+          border-radius: 20px;
+      }
+
+
+
+      .sub-heading > .intro > .info >  img {
+        width: 20%;
+        border: 2px solid #fff;
+        border-radius: 50%;
+      }
+
+       .sub-heading > .intro > span {
+        color: #fff;
+       }
+
+      .sub-heading > .intro >.info {
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        margin-left: 10px;
+      }
+
+
+
+       .sub-heading > .intro >.info > p {
+        font-size: .8rem;
+        color: #fff;
+        font-weight: 700;
+       }
+
+        .sub-heading > .intro >.info > p > span {
+            color: var(--Gray-300);
+            font-size: .6rem;
+           
+        }
+
+       
+
+
+         .sub-heading > .intro > i {
+          color: #fff;
+         }
+
+       .sub-heading > .intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .5rem;
+       }
+
+       .chats {
+        width: 90%;
+        margin-inline: auto;
+        margin-top: .8rem;
+      }
+
+      .chats > .bubble {
+        width: 65%;
+        font-size: .6rem;
+        padding: .6rem .5rem;
+        background-color: hsla(0, 0%, 1%, 0.07);
+        border-radius: 10px;
+        margin-block: .5rem;
+        color: var(--Purple-600);
+      }
+
+      .chats > .dogs {
+        margin-top: 1rem;
+        width: 65%;
+        min-height: 50px;
+        display: flex;
+        margin-left: auto;
+        gap: .5rem;
+      }
+
+      .dogs > .dog > img {
+        display: block;
+        max-width: 100%;
+        max-block-size: auto; 
+        border-radius: 14px;
+        
+      }
+
+      .bg-white {
+        width: fit-content;
+        font-size: .6rem;
+        padding: .7rem ;
+        background-color: var(--White);
+        border-radius: 10px;
+        border-end-end-radius: 0;
+        margin-block: .3rem;
+        color: var(--Purple-600);
+        margin-left: auto;
+      }
+
+      .form {
+        margin-top: 1rem;
+        font-size: .7rem;
+      } 
+
+
+      .radio {
+        padding: .6rem .5rem;
+        background-color: var(--Purple-600);
+        max-width: 75%;
+        border-radius: 10px;
+        border-end-start-radius: 0;
+        margin-block: .5rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+        flex-wrap: wrap;
+      }
+
+      .radio > label {
+        display: flex;
+        gap: 2.4rem;
+      }
+
+      .radio > label > span {
+        font-weight: 500;
+      }
+
+      .contact {
+        max-width: 100%;
+        height: fit-content;
+        position: relative;
+      }
+
+      .contact > input[type=text] {
+     
+        padding: .8rem 2.5rem;
+        border-radius: 40px;
+        border: none; 
+      }
+
+      .contact > input[type=text]::placeholder {
+          color: var(--Gray-300);
+      }
+
+        .contact > .btn {
+          position: absolute;
+          padding: 5px;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          border: none;
+          color: #fff;
+          background-color: var(--Purple-950);
+          font-weight: 700;
+          top: 10%;
+          left: 75%;
+        }
+
+        .desc {
+        width: 55%;
+        text-wrap: pretty;
+       
+      }
+
+      .desc > h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: hsl(271, 36%, 24%);
+        margin-block: .5rem;
+      }
+
+      .desc > p {
+        color:  hsl(270, 7%, 64%);
+        font-weight: 400;
+        line-height: 1.7;
+      }
+
+      @media screen and (max-width: 768px) {
+          .left_side_design {
+            position: relative;
+            max-width: 80%;
+            height: 80vh;
+            left: -50px;
+            clip-path: inset(0px round 0 0 100% 25%);
+        }
+
+        .app-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-height: 40vh;
+            width: 95%;
+            margin-inline: auto;
+      }
+
+      .chat-app {
+        position: relative;
+        width: 100%;
+        height: max-content;  
+        margin-inline: auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        gap: 2rem;
+        margin-top: 10rem;
+       
+    }
+
+     .desc {
+        width: 100%;
+        text-align: center;
+        margin-inline: auto;
+
+      }
+
+      .desc > h1 {
+        font-size: 2.5rem;
+        width: 95%;
+        margin-inline: auto;
+        white-space: nowrap;
+      }
+
+      .desc > p {
+        line-height: 1.5;
+        font-size: .9rem;
+      }
+
+       .message {
+        width: 16rem;
+        height: 85vh;
+        background-color: var(--Gray-100) ;
+        border-radius: 30px;
+        box-shadow: 0 0 0 8px var(--White);
+        
+      }
+
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .message {
+        min-width: clamp(17rem, 18rem, 19rem);
+        min-height: 90vh;
+        background-color: var(--Gray-100) ;
+        border-radius: 30px;
+        box-shadow: 0 0 0 8px var(--White);
+        
+      }
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="left_side_design"></div>
+    <div class="app-container">
+        <div class="chat-app">
+        <div class="message">
+          <div class="sub-heading">
+            <div class="base"></div>
+            <div class="intro">
+               <span >&lt;</span>
+         
+                <div class="info">
+                  <img src="images/avatar.jpg" alt="avatar">
+                  <p> Samuel Green <br>
+                     <span>Available to Walk</span>
+                  </p>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+             </div>
+          </div>
+          <section class="chats">
+             <div class="bubble ">
+            <p>That sounds great. I’d be happy with that.</p>
+          </div>
+          <div class="bubble ">
+            <p>Could you send over some pictures of your dog, please?</p>
+          </div>
+          
+          <div class="dogs">
+              <div class="dog">
+                <img src="images/dog-image-1.jpg" alt="dog-1">
+              </div>
+              <div class="dog">
+                <img src="images/dog-image-2.jpg" alt="dog-2">
+              </div>
+              <div class="dog">
+                <img src="images/dog-image-3.jpg" alt="dog-3">
+              </div>
+          </div>
+          <div class=" bg-white">
+            <p>Here are a few pictures. She’s <br> a happy girl!</p>
+          </div>
+         <div class=" bg-white">
+            <p>Can you make it?</p>
+          </div>
+           <div class="bubble ">
+            <p>She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+          </div>
+
+          <div class="form">
+              <div class="radio">
+                <input type="radio" name="price" id="standard">
+                <label for="standard">30 minute walk 
+                  <span>29&dollar;</span>
+                </label>
+              </div>
+
+              <div class="radio">
+                <input type="radio" name="price" id="pro">
+                <label for="pro">30 minute walk 
+                  <span>49&dollar;</span>
+                </label>
+              </div>
+          </div>
+
+          <div class="contact">
+            <input type="text" placeholder="Type a message…">
+            <button class="btn">&gt</button>
+          </div>
+          </section>       
+        </div>
+
+        <div class="desc">
+          <h1>Simple booking</h1>
+          <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+            discuss arrangements and make bookings. Once the walk has been completed you can rate 
+           your walker and book again all through the chat.</p>
+        </div>
+    
+   </div>
+    
+</body>
+</html>
